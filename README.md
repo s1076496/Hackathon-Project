@@ -29,7 +29,5 @@ npx http-server
 
 ## Notes
 
-- Data source: 
-    -Numeric values in the app are from 2012.
-    -Best colleges for each major is AI Generated
+- Data source: Numeric values in the app are from 2012. Best colleges for each major is AI Generated
 ```
