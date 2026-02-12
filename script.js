@@ -277,15 +277,13 @@ function displayData(majorType){
   let highestUnemploymentRate = "Major with Highest Unemployment Rate for " + majorType + ": " + majorWithHighestUnemploymentRate(majorType);
   let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
   let bestCollegesList = 'Here are some of the best colleges for this type of major: ' + bestColleges(majorType).join(', ');
-  //update HTML elements with the variables above
+  document.getElementById("header").innerText = header;
+  document.getElementById("description").innerText = description;
+  document.getElementById("avgMedianSalary").innerText = avgMedianSalary;
+  document.getElementById("highestMedianSalary").innerText = highestMedianSalary;
+  document.getElementById("lowestMedianSalary").innerText = lowestMedianSalary;
+  document.getElementById("avgUnemploymentRate").innerText = avgUnemploymentRate;
+  document.getElementById("highestUnemploymentRate").innerText = highestUnemploymentRate;
+  document.getElementById("lowestUnemploymentRate").innerText = lowestUnemploymentRate;
+  document.getElementById("bestCollegesList").innerText = bestCollegesList;
 }
-const container = document.querySelector('#majorTypeButtonContainer');
-container.addEventListener('click', (event) => {
-    const clickedId = event.target.id;
-
-    if (clickedId) {
-      window.location.href = "majorStats.html"
-      let majorType = clickedId;
-      displayData(majorType); //still need to add code to this function to update html elements
-    }
-});
