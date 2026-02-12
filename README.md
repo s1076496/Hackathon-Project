@@ -29,8 +29,7 @@ npx http-server
 
 ## Notes
 
-- Data source: numeric values in the app are from 2012.
-- No build step required; this is a static site.
-
-If you want, I can add a short development or contribution section.
+- Data source: 
+    -Numeric values in the app are from 2012.
+    -Best colleges for each major is AI Generated
 ```
