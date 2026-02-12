@@ -172,3 +172,87 @@ const majorStatistics = {
   171: [172.0, "Counseling Psychology", 4626.0, 931.0, 3695.0, "Psychology & Social Work", 0.798746217, 3777.0, 214.0, 0.053620646, 23400.0],
   172: [173.0, "Library Science", 1098.0, 134.0, 964.0, "Education", 0.877959927, 742.0, 87.0, 0.104945718, 22000.0]
 };
+const majorTypes = [
+  'Engineering',
+  'Business',
+  'Physical Sciences',
+  'Law & Public Policy',
+  'Computers & Mathematics',
+  'Industrial Arts & Consumer Services',
+  'Arts',
+  'Health',
+  'Social Science',
+  'Biology & Life Science',
+  'Education',
+  'Agriculture & Natural Resources',
+  'Humanities & Liberal Arts',
+  'Psychology & Social Work',
+  'Communications & Journalism',
+  'Interdisciplinary'
+];
+function averageMedianSalary(majorType){
+  let totalSalary = 0;
+  let count = 0;
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType) {
+      totalSalary += majorStatistics[key][10];
+      count++;
+    }
+  }
+  return totalSalary / count;
+}
+function majorWithHighestMedianSalary(majorType){
+  let highestSalary = 0;
+  let majorName = "";
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType && majorStatistics[key][10] > highestSalary) {
+      highestSalary = majorStatistics[key][10];
+      majorName = majorStatistics[key][1];
+    }
+  }
+  return majorName;
+}
+function majorWithLowestMedianSalary(majorType){
+  let lowestSalary = Infinity;
+  let majorName = "";
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType && majorStatistics[key][10] < lowestSalary) {
+      lowestSalary = majorStatistics[key][10];
+      majorName = majorStatistics[key][1];
+    }
+  }
+  return majorName;
+}
+function majorWithHighestUnemploymentRate(majorType){
+  let highestRate = 0;
+  let majorName = "";
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType && majorStatistics[key][9] > highestRate) {
+      highestRate = majorStatistics[key][9];
+      majorName = majorStatistics[key][1];
+    }
+  }
+  return majorName;
+} 
+function majorWithLowestUnemploymentRate(majorType){
+  let lowestRate = 100;
+  let majorName = "";
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType && majorStatistics[key][9] < lowestRate) {
+      lowestRate = majorStatistics[key][9];
+      majorName = majorStatistics[key][1];
+    }
+  }
+  return majorName;
+}
+function averageUnemploymentRate(majorType){
+  let totalRate = 0;
+  let count = 0;
+  for (let key in majorStatistics) {
+    if (majorStatistics[key][5] === majorType) {
+      totalRate += majorStatistics[key][9];
+      count++;
+    }
+  }
+  return totalRate / count;
+}
