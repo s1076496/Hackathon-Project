@@ -268,6 +268,7 @@ function bestColleges(majorType){
   return majorTypesBestColleges[majorType];
 }
 function displayData(majorType){
+  window.location.href = "majorStats.html";
   let header = majorType;
   let description = majorTypes[majorType][0];
   let avgMedianSalary = "Average Median Salary for " + majorType + ": $" + averageMedianSalary(majorType);
@@ -277,13 +278,16 @@ function displayData(majorType){
   let highestUnemploymentRate = "Major with Highest Unemployment Rate for " + majorType + ": " + majorWithHighestUnemploymentRate(majorType);
   let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
   let bestCollegesList = 'Here are some of the best colleges for this type of major: ' + bestColleges(majorType).join(', ');
-  document.getElementById("header").innerText = header;
+  window.onload = function() {
+    document.getElementById("majorStatsHeader").innerText = header;
   document.getElementById("description").innerText = description;
-  document.getElementById("avgMedianSalary").innerText = avgMedianSalary;
-  document.getElementById("highestMedianSalary").innerText = highestMedianSalary;
-  document.getElementById("lowestMedianSalary").innerText = lowestMedianSalary;
-  document.getElementById("avgUnemploymentRate").innerText = avgUnemploymentRate;
+  document.getElementById("averageMedianIncome").innerText = avgMedianSalary;
+  document.getElementById("highestMedianIncome").innerText = highestMedianSalary;
+  document.getElementById("lowestMedianIncome").innerText = lowestMedianSalary;
+  document.getElementById("averageUnemploymentRate").innerText = avgUnemploymentRate;
   document.getElementById("highestUnemploymentRate").innerText = highestUnemploymentRate;
   document.getElementById("lowestUnemploymentRate").innerText = lowestUnemploymentRate;
-  document.getElementById("bestCollegesList").innerText = bestCollegesList;
+  document.getElementById("bestColleges").innerText = bestCollegesList;
+  }
+  
 }
