@@ -172,19 +172,19 @@ const majorStatistics = {
   171: [172.0, "Counseling Psychology", 4626.0, 931.0, 3695.0, "Social Sciences & Public Policy", 0.798746217, 3777.0, 214.0, 0.053620646, 23400.0],
   172: [173.0, "Library Science", 1098.0, 134.0, 964.0, "Education & Teaching", 0.877959927, 742.0, 87.0, 0.104945718, 22000.0]
 };
-const majorTypes = [
-  'Engineering & Technology',
-  'Business & Management',
-  'Physical & Earth Sciences',
-  'Social Sciences & Public Policy',
-  'Computing & Mathematics',
-  'Arts, Design & Media',
-  'Life Sciences & Health',
-  'Education & Teaching',
-  'Agriculture & Natural Resources',
-  'Humanities & Languages',
-  'Interdisciplinary / Miscellaneous'
-];
+const majorTypes = {
+  'Engineering & Technology': ['This category is for builders and optimizers. It focuses on applying scientific and mathematical principles to design, develop, and maintain structures, mechanisms, and systems. Whether it’s civil, mechanical, or aerospace, the goal is solving real-life problems.'],
+  'Business & Management': ['These majors dive into the inner-workings of the economy and business organization. It covers everything from how money moves to how people are led and how products are sold.'],
+  'Physical & Earth Sciences': ['If you want to understand the fundamental laws of the universe or the ground beneath your feet, this is your calling. It encompasses Physics, Chemistry, Geology, and Environmental Science, focusing on the non-living and natural phenomena.'],
+  'Social Sciences & Public Policy': ['This field studies human behavior and communal life. It includes Psychology, Sociology, and Political Science. It’s about understanding why humans do what they do at individual and societal levels.'],
+  'Computing & Mathematics': ['This is the journey into logic, abstraction, and data science. From writing code and developing AI to exploring pure mathematics, this field of majors focus on the digital world and the number theory that acts as the backbone of all technology.'],
+  'Arts, Design & Media': ['This category combines creativity with communication. It covers fine arts, graphic design, film, and journalism. It’s about how to express ideas, tell stories, and create aesthetic or functional beauty in our lives.'],
+  'Life Sciences & Health': ['Focused on living organisms, this spans from the molecular level with Biochemistry to the human body with Pre-Med and Nursing and entire ecosystems through the study of Biology and Ecology. It’s the primary path for those looking to enter healthcare or biological studies.'],
+  'Education & Teaching': ['This field is dedicated to the practice of learning. It covers how to teach, curriculum development, and educational psychology, all to prepare matriculates in leading classrooms or managing educational institutions.'],
+  'Agriculture & Natural Resources': ['These majors focus on the management of Earth’s resources. This includes crop science, forestry, wildlife conservation, and food production and management systems.'],
+  'Humanities & Languages': ['Humanities and Languages are the study of the human experience through history, philosophy, literature, and linguistics. These majors focus on critical thinking, deep reading and inference, and understanding the cultural heritage of the world.'],
+  'Interdisciplinary / Miscellaneous': ["For those who don't fit into a single box. This includes majors like International Studies, Gender Studies, or individualized programs that blend multiple categories to solve intricate, multi-faceted problems."],
+};
 function averageMedianSalary(majorType){
   let totalSalary = 0;
   let count = 0;
