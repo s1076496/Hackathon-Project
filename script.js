@@ -251,3 +251,14 @@ function averageUnemploymentRate(majorType){
   }
   return totalRate / count;
 }
+function displayData(majorType){
+  let header = majorType;
+  let description = majorTypes[majorType][0];
+  let avgMedianSalary = "Average Median Salary for " + majorType + ": $" + averageMedianSalary(majorType);
+  let highestMedianSalary = "Major with Highest Median Salary for " + majorType + ": " + majorWithHighestMedianSalary(majorType);
+  let lowestMedianSalary = "Major with Lowest Median Salary for " + majorType + ": " + majorWithLowestMedianSalary(majorType);
+  let avgUnemploymentRate = "Average Unemployment Rate for " + majorType + ": " + averageUnemploymentRate(majorType) * 100 + "%";
+  let highestUnemploymentRate = "Major with Highest Unemployment Rate for " + majorType + ": " + majorWithHighestUnemploymentRate(majorType);
+  let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
+  //update HTML elements with the variables above
+}
