@@ -29,5 +29,5 @@ npx http-server
 
 ## Notes
 
-- Data source: Numeric values in the app are from 2012. Best colleges for each major is AI Generated
+- Data source: Uses a modified version of code.org's College Majors & Incomes data set.Numeric values are from 2012. Best colleges for each major is AI Generated, and does not come from the code.org dataset.
 ```
