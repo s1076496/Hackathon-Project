@@ -262,3 +262,15 @@ function displayData(majorType){
   let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
   //update HTML elements with the variables above
 }
+
+const container = document.querySelector('#majorTypeButtonContainer');
+
+container.addEventListener('click', (event) => {
+    const clickedId = event.target.id;
+
+    if (clickedId) {
+      window.location.href = "majorStats.html"
+      let majorType = clickedId;
+      displayData(majorType); //still need to add code to this function to update html elements
+    }
+});
