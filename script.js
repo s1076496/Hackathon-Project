@@ -172,7 +172,7 @@ const majorStatistics = {
   171: [172.0, "Counseling Psychology", 4626.0, 931.0, 3695.0, "Social Sciences & Public Policy", 0.798746217, 3777.0, 214.0, 0.053620646, 23400.0],
   172: [173.0, "Library Science", 1098.0, 134.0, 964.0, "Education & Teaching", 0.877959927, 742.0, 87.0, 0.104945718, 22000.0]
 };
-const majorTypes = {
+const majorTypesDescriptions = {
   'Engineering & Technology': ['This category is for builders and optimizers. It focuses on applying scientific and mathematical principles to design, develop, and maintain structures, mechanisms, and systems. Whether it’s civil, mechanical, or aerospace, the goal is solving real-life problems.'],
   'Business & Management': ['These majors dive into the inner-workings of the economy and business organization. It covers everything from how money moves to how people are led and how products are sold.'],
   'Physical & Earth Sciences': ['If you want to understand the fundamental laws of the universe or the ground beneath your feet, this is your calling. It encompasses Physics, Chemistry, Geology, and Environmental Science, focusing on the non-living and natural phenomena.'],
@@ -184,6 +184,19 @@ const majorTypes = {
   'Agriculture & Natural Resources': ['These majors focus on the management of Earth’s resources. This includes crop science, forestry, wildlife conservation, and food production and management systems.'],
   'Humanities & Languages': ['Humanities and Languages are the study of the human experience through history, philosophy, literature, and linguistics. These majors focus on critical thinking, deep reading and inference, and understanding the cultural heritage of the world.'],
   'Interdisciplinary / Miscellaneous': ["For those who don't fit into a single box. This includes majors like International Studies, Gender Studies, or individualized programs that blend multiple categories to solve intricate, multi-faceted problems."],
+};
+const majorTypesBestColleges = {
+  'Engineering & Technology': ['Massachusetts Institute of Technology (MIT)', 'Stanford University', 'University of California, Berkeley', 'Georgia Institute of Technology'],
+  'Business & Management': ['Harvard Business School', 'Wharton School', 'Stanford Graduate School of Business'],
+  'Physical & Earth Sciences': ['California Institute of Technology (Caltech)', 'Princeton University', 'Columbia University'],
+  'Social Sciences & Public Policy': ['Harvard University', 'Yale University', 'Stanford University'],
+  'Computing & Mathematics': ['Massachusetts Institute of Technology (MIT)', 'Stanford University', 'University of California, Berkeley'],
+  'Arts, Design & Media': ['Rhode Island School of Design (RISD)', 'California Institute of the Arts (CITA)', 'Yale School of Art'],
+  'Life Sciences & Health': ['Harvard Medical School', 'Johns Hopkins University School of Medicine', 'Stanford Medicine'],
+  'Education & Teaching': ['Harvard Graduate School of Education', 'Stanford Graduate School of Education'],
+  'Agriculture & Natural Resources': ['Cornell University College of Agriculture and Life Sciences', "University of California, Davis (UCD)"],
+  "Humanities & Languages": ["Columbia University", "University of Chicago", "Yale University"],
+  "Interdisciplinary / Miscellaneous": ["University of Pennsylvania", "University of Michigan", "University of California, Los Angeles (UCLA)"]
 };
 function averageMedianSalary(majorType){
   let totalSalary = 0;
@@ -251,6 +264,9 @@ function averageUnemploymentRate(majorType){
   }
   return totalRate / count;
 }
+function bestColleges(majorType){
+  return majorTypesBestColleges[majorType];
+}
 function displayData(majorType){
   let header = majorType;
   let description = majorTypes[majorType][0];
@@ -260,11 +276,10 @@ function displayData(majorType){
   let avgUnemploymentRate = "Average Unemployment Rate for " + majorType + ": " + averageUnemploymentRate(majorType) * 100 + "%";
   let highestUnemploymentRate = "Major with Highest Unemployment Rate for " + majorType + ": " + majorWithHighestUnemploymentRate(majorType);
   let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
+  let bestCollegesList = 'Here are some of the best colleges for this type of major: ' + bestColleges(majorType).join(', ');
   //update HTML elements with the variables above
 }
-
 const container = document.querySelector('#majorTypeButtonContainer');
-
 container.addEventListener('click', (event) => {
     const clickedId = event.target.id;
 
