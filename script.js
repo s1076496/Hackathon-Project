@@ -230,7 +230,7 @@ function majorWithHighestUnemploymentRate(majorType){
   return majorName;
 } 
 function majorWithLowestUnemploymentRate(majorType){
-  let lowestRate = 100;
+  let lowestRate = Infinity;
   let majorName = "";
   for (let key in majorStatistics) {
     if (majorStatistics[key][5] === majorType && majorStatistics[key][9] < lowestRate) {
