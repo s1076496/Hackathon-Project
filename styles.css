@@ -13,11 +13,11 @@ body {
   padding: 9px 12px;
 }
 .goToHome:hover{
-  background-color: #a50000;
-  color: white;
+  background-color: #f7df06;
+  color: rgb(5, 46, 228);
   border: none;
   cursor: pointer; 
-  padding: 20px 32px;
+  padding: 20px 30px;
 }
 
 
