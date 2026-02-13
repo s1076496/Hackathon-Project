@@ -262,7 +262,7 @@ function averageUnemploymentRate(majorType){
       count++;
     }
   }
-  return Math.round(Math.trunc((totalRate / count) * 100)) / 100;
+  return Math.round(totalRate / count) * 100 / 100;
 }
 function bestColleges(majorType){
   return majorTypesBestColleges[majorType];

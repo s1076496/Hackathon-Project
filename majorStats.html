@@ -10,9 +10,11 @@
 
     <body>
         <!-- Add HTML markup elements for your web site below -->
-        <h2 id="majorStatsHeader"></h2>
-        <div> 
-            <p>Here you can find statistics about the major type you selected, including income, unemployment rate, and other relevant data.</p>
+        <h2 style="text-align:center" id="majorStatsHeader"></h2>
+        <br>
+        <p style="text-align:center">Here you can find statistics about the major type you selected, including income, unemployment rate, and other relevant data.</p>
+        <br>
+        <div class="rectangle-wrapper"> 
             <p id="description"></p>
             <p id="averageMedianIncome"></p>
             <p id="lowestMedianIncome"></p>
@@ -21,9 +23,8 @@
             <p id="highestUnemploymentRate"></p>
             <p id="lowestUnemploymentRate"></p>
             <p id="bestColleges"></p>
-            <br><br>
-            <button class ="goToHome"onclick="goToMajorList()">Back to Major Types List</button>
-            <button class ="goToHome" onclick="goToHome()">Go to Home Page</button>
         </div>
+        <button onclick="goToMajorList()">Back to Major Types List</button>
+        <button onclick="goToHome()">Go to Home Page</button>
     </body>
 </html>
