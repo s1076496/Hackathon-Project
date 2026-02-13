@@ -207,7 +207,7 @@ function averageMedianSalary(majorType){
       count++;
     }
   }
-  return totalSalary / count;
+  return Math.round(totalSalary / count);
 }
 function majorWithHighestMedianSalary(majorType){
   let highestSalary = 0;
@@ -262,7 +262,7 @@ function averageUnemploymentRate(majorType){
       count++;
     }
   }
-  return totalRate / count;
+  return Math.round((totalRate / count) * 100) / 100;
 }
 function bestColleges(majorType){
   return majorTypesBestColleges[majorType];
