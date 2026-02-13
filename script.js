@@ -268,26 +268,43 @@ function bestColleges(majorType){
   return majorTypesBestColleges[majorType];
 }
 function displayData(majorType){
-  window.location.href = "majorStats.html";
   let header = majorType;
-  let description = majorTypes[majorType][0];
+  let description = majorTypesDescriptions[majorType][0];
   let avgMedianSalary = "Average Median Salary for " + majorType + ": $" + averageMedianSalary(majorType);
   let highestMedianSalary = "Major with Highest Median Salary for " + majorType + ": " + majorWithHighestMedianSalary(majorType);
   let lowestMedianSalary = "Major with Lowest Median Salary for " + majorType + ": " + majorWithLowestMedianSalary(majorType);
   let avgUnemploymentRate = "Average Unemployment Rate for " + majorType + ": " + averageUnemploymentRate(majorType) * 100 + "%";
   let highestUnemploymentRate = "Major with Highest Unemployment Rate for " + majorType + ": " + majorWithHighestUnemploymentRate(majorType);
   let lowestUnemploymentRate = "Major with Lowest Unemployment Rate for " + majorType + ": " + majorWithLowestUnemploymentRate(majorType);
-  let bestCollegesList = 'Here are some of the best colleges for this type of major: ' + bestColleges(majorType).join(', ');
-  window.onload = function() {
-    document.getElementById("majorStatsHeader").innerText = header;
-  document.getElementById("description").innerText = description;
-  document.getElementById("averageMedianIncome").innerText = avgMedianSalary;
-  document.getElementById("highestMedianIncome").innerText = highestMedianSalary;
-  document.getElementById("lowestMedianIncome").innerText = lowestMedianSalary;
-  document.getElementById("averageUnemploymentRate").innerText = avgUnemploymentRate;
-  document.getElementById("highestUnemploymentRate").innerText = highestUnemploymentRate;
-  document.getElementById("lowestUnemploymentRate").innerText = lowestUnemploymentRate;
-  document.getElementById("bestColleges").innerText = bestCollegesList;
-  }
+  let bestCollegesList = 'Here are some of the best colleges for this type of major: ' + bestColleges(majorType).join(', ');  
+  sessionStorage.setItem("majorStatsHeader", header);
+  sessionStorage.setItem("description", description);
+  sessionStorage.setItem("averageMedianIncome", avgMedianSalary);
+  sessionStorage.setItem("highestMedianIncome", highestMedianSalary);
+  sessionStorage.setItem("lowestMedianIncome", lowestMedianSalary);
+  sessionStorage.setItem("averageUnemploymentRate", avgUnemploymentRate);
+  sessionStorage.setItem("highestUnemploymentRate", highestUnemploymentRate);
+  sessionStorage.setItem("lowestUnemploymentRate", lowestUnemploymentRate);
+  sessionStorage.setItem("bestColleges", bestCollegesList);
   
+  window.location.href = "majorStats.html";
+}
+window.addEventListener("load", function() {
+  if (sessionStorage.getItem("majorStatsHeader")) {
+    document.getElementById("majorStatsHeader").innerText = sessionStorage.getItem("majorStatsHeader");
+    document.getElementById("description").innerText = sessionStorage.getItem("description");
+    document.getElementById("averageMedianIncome").innerText = sessionStorage.getItem("averageMedianIncome");
+    document.getElementById("highestMedianIncome").innerText = sessionStorage.getItem("highestMedianIncome");
+    document.getElementById("lowestMedianIncome").innerText = sessionStorage.getItem("lowestMedianIncome");
+    document.getElementById("averageUnemploymentRate").innerText = sessionStorage.getItem("averageUnemploymentRate");
+    document.getElementById("highestUnemploymentRate").innerText = sessionStorage.getItem("highestUnemploymentRate");
+    document.getElementById("lowestUnemploymentRate").innerText = sessionStorage.getItem("lowestUnemploymentRate");
+    document.getElementById("bestColleges").innerText = sessionStorage.getItem("bestColleges");
+  }
+});
+function goToMajorList(){
+  window.location.href = "majorList.html";
+}
+function goToHome(){
+  window.location.href = "index.html";
 }
