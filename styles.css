@@ -19,5 +19,19 @@ body {
   cursor: pointer; 
   padding: 20px 30px;
 }
+.goToHome:hover{
+  background-color: #f70606;
+  color: rgb(5, 228, 16);
+  border: none;
+  cursor: pointer; 
+  padding: 20px 30px;
+}
+.goToHome:hover{
+  background-color: #f7ab06;
+  color: rgb(228, 5, 5);
+  border: none;
+  cursor: pointer; 
+  padding: 20px 30px;
+}
 
 
