@@ -11,29 +11,14 @@ body {
   color: white;
   border: none;
   cursor: pointer; 
-  padding: 8px 12px;
 }
 .goToHome:hover{
   background-color: #109703;
   color: rgb(0, 0, 0);
   border: none;
   cursor: pointer; 
-  padding: 8px 12px;
 }
-.goToHome:hover{
-  background-color: #f70606;
-  color: rgb(0, 0, 0);
-  border: none;
-  cursor: pointer; 
-  padding: 8px 12px;
-}
-.goToHome:hover{
-  background-color: #044800;
-  color: rgb(0, 0, 0);
-  border: none;
-  cursor: pointer; 
-  padding: 8px 12px;
-}
+
 h2 {
   color: white;
   position: absolute;
@@ -41,7 +26,7 @@ h2 {
 }
 
 .rectangle-wrapper {
-
+  
   background-color: #ffffff;
   width: 500px;
   min-height: 300px;
