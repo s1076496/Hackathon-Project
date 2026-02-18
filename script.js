@@ -173,15 +173,15 @@ const majorStatistics = {
   172: [173.0, "Library Science", 1098.0, 134.0, 964.0, "Education & Teaching", 0.877959927, 742.0, 87.0, 0.104945718, 22000.0]
 };
 const majorTypesDescriptions = {
-  'Engineering & Technology': ['This category is for builders and optimizers. It focuses on applying scientific and mathematical principles to design, develop, and maintain structures, mechanisms, and systems. Whether it’s civil, mechanical, or aerospace, the goal is solving real-life problems.'],
+  'Engineering & Technology': ['This category is for builders and optimizers. It focuses on applying scientific and mathematical principles to design, develop, and maintain structures, mechanisms, and systems. Whether it is civil, mechanical, or aerospace, the goal is solving real-life problems.'],
   'Business & Management': ['These majors dive into the inner-workings of the economy and business organization. It covers everything from how money moves to how people are led and how products are sold.'],
   'Physical & Earth Sciences': ['If you want to understand the fundamental laws of the universe or the ground beneath your feet, this is your calling. It encompasses Physics, Chemistry, Geology, and Environmental Science, focusing on the non-living and natural phenomena.'],
-  'Social Sciences & Public Policy': ["This field studies human behavior and communal life. It includes Psychology, Sociology, and Political Science. It’s about understanding why humans do what they do at individual and societal levels."],
+  'Social Sciences & Public Policy': ["This field studies human behavior and communal life. It includes Psychology, Sociology, and Political Science. It is about understanding why humans do what they do at individual and societal levels."],
   'Computing & Mathematics': ['This is the journey into logic, abstraction, and data science. From writing code and developing AI to exploring pure mathematics, this field of majors focus on the digital world and the number theory that acts as the backbone of all technology.'],
-  'Arts, Design & Media': ['This category combines creativity with communication. It covers fine arts, graphic design, film, and journalism. It’s about how to express ideas, tell stories, and create aesthetic or functional beauty in our lives.'],
-  'Life Sciences & Health': ['Focused on living organisms, this spans from the molecular level with Biochemistry to the human body with Pre-Med and Nursing and entire ecosystems through the study of Biology and Ecology. It’s the primary path for those looking to enter healthcare or biological studies.'],
+  'Arts, Design & Media': ['This category combines creativity with communication. It covers fine arts, graphic design, film, and journalism. It is about how to express ideas, tell stories, and create aesthetic or functional beauty in our lives.'],
+  'Life Sciences & Health': ['Focused on living organisms, this spans from the molecular level with Biochemistry to the human body with Pre-Med and Nursing and entire ecosystems through the study of Biology and Ecology. It is the primary path for those looking to enter healthcare or biological studies.'],
   'Education & Teaching': ['This field is dedicated to the practice of learning. It covers how to teach, curriculum development, and educational psychology, all to prepare matriculates in leading classrooms or managing educational institutions.'],
-  'Agriculture & Natural Resources': ['These majors focus on the management of Earth’s resources. This includes crop science, forestry, wildlife conservation, and food production and management systems.'],
+  'Agriculture & Natural Resources': ['These majors focus on the management of natural resources. This includes crop science, forestry, wildlife conservation, and food production and management systems.'],
   'Humanities & Languages': ['Humanities and Languages are the study of the human experience through history, philosophy, literature, and linguistics. These majors focus on critical thinking, deep reading and inference, and understanding the cultural heritage of the world.'],
   'Interdisciplinary / Miscellaneous': ["For those who don't fit into a single box. This includes majors like International Studies, Gender Studies, or individualized programs that blend multiple categories to solve intricate, multi-faceted problems."],
 };
@@ -199,75 +199,83 @@ const majorTypesBestColleges = {
   "Interdisciplinary / Miscellaneous": ["University of Pennsylvania", "University of Michigan", "University of California, Los Angeles (UCLA)"]
 };
 function averageMedianSalary(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then adds the number to the total then does math to find average
   let totalSalary = 0;
   let count = 0;
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType) {
-      totalSalary += majorStatistics[key][10];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType) {
+      totalSalary += majorStatistics[row][10];
       count++;
     }
   }
   return Math.round(totalSalary / count);
 }
 function majorWithHighestMedianSalary(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then compares the number to the current highest and replaces it if it's higher
   let highestSalary = 0;
   let majorName = "";
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType && majorStatistics[key][10] > highestSalary) {
-      highestSalary = majorStatistics[key][10];
-      majorName = majorStatistics[key][1];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType && majorStatistics[row][10] > highestSalary) {
+      highestSalary = majorStatistics[row][10];
+      majorName = majorStatistics[row][1];
     }
   }
   return majorName;
 }
 function majorWithLowestMedianSalary(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then compares the number to the current lowest and replaces it if it's lower
   let lowestSalary = Infinity;
   let majorName = "";
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType && majorStatistics[key][10] < lowestSalary) {
-      lowestSalary = majorStatistics[key][10];
-      majorName = majorStatistics[key][1];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType && majorStatistics[row][10] < lowestSalary) {
+      lowestSalary = majorStatistics[row][10];
+      majorName = majorStatistics[row][1];
     }
   }
   return majorName;
 }
 function majorWithHighestUnemploymentRate(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then compares the number to the current highest unemployment rate and replaces it if it's higher
   let highestRate = 0;
   let majorName = "";
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType && majorStatistics[key][9] > highestRate) {
-      highestRate = majorStatistics[key][9];
-      majorName = majorStatistics[key][1];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType && majorStatistics[row][9] > highestRate) {
+      highestRate = majorStatistics[row][9];
+      majorName = majorStatistics[row][1];
     }
   }
   return majorName;
 } 
 function majorWithLowestUnemploymentRate(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then compares the number to the current lowest unemployment rate and replaces it if it's lower
   let lowestRate = Infinity;
   let majorName = "";
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType && majorStatistics[key][9] < lowestRate) {
-      lowestRate = majorStatistics[key][9];
-      majorName = majorStatistics[key][1];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType && majorStatistics[row][9] < lowestRate) {
+      lowestRate = majorStatistics[row][9];
+      majorName = majorStatistics[row][1];
     }
   }
   return majorName;
 }
 function averageUnemploymentRate(majorType){
+  //goes through each row in the hash, then looks at the name of the major type, checks if it matches, then adds the number to the total then does math to find average
   let totalRate = 0;
   let count = 0;
-  for (let key in majorStatistics) {
-    if (majorStatistics[key][5] === majorType) {
-      totalRate += majorStatistics[key][9];
+  for (let row in majorStatistics) {
+    if (majorStatistics[row][5] === majorType) {
+      totalRate += majorStatistics[row][9];
       count++;
     }
   }
   return Math.round(totalRate / count) * 100 / 100;
 }
 function bestColleges(majorType){
+  //returns the colleges listed in the major type row of majorTypesBestColleges
   return majorTypesBestColleges[majorType];
 }
 function displayData(majorType){
+  //adds data to variables, then puts them in session storage, then sets the window location to majorStats.html
   let header = majorType;
   let description = majorTypesDescriptions[majorType][0];
   let avgMedianSalary = "Average Median Salary for " + majorType + ": $" + averageMedianSalary(majorType);
@@ -290,6 +298,7 @@ function displayData(majorType){
   window.location.href = "majorStats.html";
 }
 window.addEventListener("load", function() {
+  //if the item 'majorStatsHeader' exists in storage, then it gets the data from the sessions storage and puts it in the appropriate html element
   if (sessionStorage.getItem("majorStatsHeader")) {
     document.getElementById("majorStatsHeader").innerText = sessionStorage.getItem("majorStatsHeader");
     document.getElementById("description").innerText = sessionStorage.getItem("description");
@@ -303,8 +312,10 @@ window.addEventListener("load", function() {
   }
 });
 function goToMajorList(){
+  //sets the window location to majorList.html
   window.location.href = "majorList.html";
 }
 function goToHome(){
+  //sets the window location to index.html
   window.location.href = "index.html";
 }

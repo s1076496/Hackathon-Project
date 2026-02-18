@@ -6,6 +6,11 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
 }
+.sub-header {
+  color: #89b45d;
+  font-weight: bold;
+  font-size: 18px;
+}
 .majorTypesNext:hover{
   background-color: #13a500;
   color: white;
@@ -18,24 +23,49 @@ body {
   border: none;
   cursor: pointer; 
 }
+.goToHome{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 h2 {
   color: white;
-  position: absolute;
+  text-align: center;
   top: 20px;
 }
 
 .rectangle-wrapper {
-  
   background-color: #ffffff;
   width: 500px;
   min-height: 300px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  padding: 40px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  z-index: 10;
+  position: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rectangle-wrapper-home {
+  background-color: #ffffff;
+  min-width: 1000px;
+  min-height: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
