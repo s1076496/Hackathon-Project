@@ -13,7 +13,7 @@ This small web app shows statistics for various college majors. All numeric data
 
 ## Run locally
 
-Option 1 — Python (simple, no dependencies):
+Option 1 — Python:
 
 ```bash
 python3 -m http.server 8000
