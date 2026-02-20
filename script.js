@@ -1,4 +1,4 @@
-const majorStatistics = {
+ const majorStatistics = {
   1: [1.0, "Petroleum Engineering", 2339.0, 2057.0, 282.0, "Engineering & Technology", 0.120564344, 1976.0, 37.0, 0.018380527, 110000.0],
   2: [2.0, "Mining And Mineral Engineering", 756.0, 679.0, 77.0, "Engineering & Technology", 0.101851852, 640.0, 85.0, 0.117241379, 75000.0],
   3: [3.0, "Metallurgical Engineering", 856.0, 725.0, 131.0, "Engineering & Technology", 0.153037383, 648.0, 16.0, 0.024096386, 73000.0],
@@ -268,7 +268,7 @@ function averageUnemploymentRate(majorType){
       count++;
     }
   }
-  return Math.round(totalRate / count) * 100 / 100;
+  return Math.round(totalRate / count);
 }
 function bestColleges(majorType){
   //returns the colleges listed in the major type row of majorTypesBestColleges
